@@ -1,0 +1,19 @@
+#Define the C compiler
+CC = gcc
+
+#Define any compile-time flags
+CFLAGS = -Wall -Wextra -g
+
+#Define the target executable
+TARGET = myshell_v0
+
+#Default target
+all: $(TARGET)
+
+#Build target
+$(TARGET): myshell_v0.c
+	$(CC) $(CFLAGS) -o $@ $^
+
+#Remove compiled files
+clean:
+	rm -f $(TARGET)
