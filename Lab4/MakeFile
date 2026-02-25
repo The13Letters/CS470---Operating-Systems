@@ -1,0 +1,22 @@
+#Define the C compiler
+CC = gcc
+
+#Define any compile-time flags
+CFLAGS = -Wall -Wextra -g
+
+#Define the target executable
+TARGETS = SJF RR
+
+#Default target
+all: $(TARGETS)
+
+#Build target
+SJF: SJF.c
+	$(CC) $(CFLAGS) -o $@ $^
+
+RR: RR.c
+	$(CC) $(CFLAGS) -o $@ $^
+
+#Remove compiled files
+clean:
+	rm -f $(TARGETS)
