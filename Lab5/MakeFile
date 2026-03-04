@@ -1,0 +1,19 @@
+#Define the C compiler
+Compiler = gcc
+
+#Define any compile-time flags
+CompilerFlags = -Wall -Wextra -g
+
+#Define the target executable
+TargetApp = Alex_testapp
+
+#Default target
+all: $(TargetApp)
+
+#Build target
+$(TargetApp): Alex_testFC.c Alex_libFC.c
+	$(Compiler) $(CompilerFlags) -o $@ $^
+
+#Remove compiled files and generated text files
+clean:
+	rm -f $(TargetApp) *.txt
